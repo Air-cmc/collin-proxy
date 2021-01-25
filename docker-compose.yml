@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+    marquee:
+        image: aflatness/fec-marquee:latest
+        ports:
+         - 3002:3002
+        environment:
+        - MONGOURL=mongodb://mongodb:27017/marquee
+    reviews:
+        image: aflatness/fec-reviews:latest
+        ports:
+        - 3003:3003
+        environment:
+        - MONGOURL=mongodb://mongodb:27017/reviews
+    host-info:
+        image: aflatness/fec:latest
+        ports:
+        - 3001:3001
+        environment:
+        - MONGODBURL=mongodb://mongodb:27017/fec
+    related:
+        image: aflatness/fec-related-info:latest
+        ports:
+        - 3000:3000
+        environment:
+        - MONGOURL=mongodb://mongodb:27017/relatedInfo
+    mongodb:
+        image: mongo:latest
+        volumes:
+        ports:
+        - 27017:27017
+        volumes:
+        - /data/db
