@@ -7,7 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.static(__dirname));
 
-const PORT = 3000;
+const PORT = 3005;
 
 
 app.listen(PORT);
