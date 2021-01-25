@@ -1,8 +1,9 @@
-Proxy Server
+## Proxy Server
 
-* To Begin
-
+#####  To Begin
 - `npm install`
 - `npm start`
 
-***** Running on port 3000
+##### Ensure all module servers are running on respective ports
+
+Proxy server runs on port 3005
