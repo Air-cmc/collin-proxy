@@ -1,6 +1,13 @@
-version: "3.9"
+version: "3.0"
 
 services:
+    mongodb:
+        image: mongo:latest
+        volumes:
+        ports:
+        - 27017:27017
+        volumes:
+        - /data/db
     marquee:
         image: aflatness/fec-marquee:latest
         ports:
@@ -25,10 +32,3 @@ services:
         - 3000:3000
         environment:
         - MONGOURL=mongodb://mongodb:27017/relatedInfo
-    mongodb:
-        image: mongo:latest
-        volumes:
-        ports:
-        - 27017:27017
-        volumes:
-        - /data/db
