@@ -3,7 +3,6 @@ version: "3.3"
 services:
     mongodb:
         image: mongo:latest
-        volumes:
         ports:
         - 27017:27017
         volumes:
@@ -26,6 +25,7 @@ services:
         - 3001:3001
         environment:
         - MONGODBURL=mongodb://mongodb:27017/fec
+        - HOST=3.101.141.49
     related:
         image: aflatness/fec-related-info:latest
         ports:
