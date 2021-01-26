@@ -24,11 +24,11 @@ services:
         ports:
         - 3001:3001
         environment:
-        - MONGODBURL=mongodb://mongodb:27017/fec
+        - MONGODBURL=mongodb://host-info-proxy_mongodb_1/fec
         - HOST=3.101.141.49
     related:
         image: aflatness/fec-related-info:latest
         ports:
         - 3000:3000
         environment:
-        - MONGOURL=mongodb://mongodb:27017/relatedInfo
+        - MONGOURL=mongodb://mongodb/relatedInfo
