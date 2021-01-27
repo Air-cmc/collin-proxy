@@ -1,4 +1,4 @@
-version: "3.3"
+version: "2"
 
 services:
     mongodb:
@@ -7,6 +7,10 @@ services:
         - 27017:27017
         volumes:
         - /data/db
+    proxy:
+        image: aflatness/fec-proxy
+        ports:
+        - 3005:3005
     marquee:
         image: aflatness/fec-marquee:latest
         ports:
