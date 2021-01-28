@@ -14,7 +14,7 @@ services:
     marquee:
         image: aflatness/fec-marquee:latest
         ports:
-         - 3002:3002
+         - 3004:3004
         environment:
         - MONGOURL=mongodb://mongodb:27017/marquee
     reviews:
