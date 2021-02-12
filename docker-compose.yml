@@ -7,6 +7,12 @@ services:
         - 27017:27017
         volumes:
         - /data/db
+    postgres:
+        image: postgres
+        environment:
+            POSTGRES_USER: collin
+            POSTGRES_PASSWORD: hackreactorsdc2021
+            POSTGRES_DB: aircmc
     proxy:
         image: aflatness/fec-proxy
         ports:
@@ -30,8 +36,6 @@ services:
         environment:
         - MONGODBURL=mongodb://mongodb:27017/fec
     related:
-        image: aflatness/fec-related-info:latest
+        image: collinnewman/sdc_relatedinfo
         ports:
         - 3000:3000
-        environment:
-        - MONGOURL=mongodb://mongodb:27017/relatedInfo
